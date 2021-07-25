@@ -6,7 +6,7 @@
     
 <div class="container pt-4">
     <div class="d-flex align-items-center justify-content-between">
-        <h1>Enrolled Recreational Students</h1>
+        <h1>Registered Home Owners</h1>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addStudentModal">
                 Add student
         </button>

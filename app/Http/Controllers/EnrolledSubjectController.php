@@ -41,6 +41,8 @@ class EnrolledSubjectController extends Controller
             $isFull = Subject::find($subjectId);
             if(!Student::find(request('id'))&& (count($house_code) == 0 || $house_code[0]['house_code'] !== request('house_code'))){$msg = 2;}
             else if(Student::find(request('id'))->status=='Deleted'){ $msg = 2;}
+            else if(Student::find(request('id'))->id =='21100636'){ $msg = 2;}
+            else if(Student::find(request('id'))->id =='21111207'){ $msg = 2;}
             else if(count($isEnrolled) > 0){ $msg = 3; }
             else if($isFull->enrollees == $isFull->capacity){ $msg = 4; }
             else{
