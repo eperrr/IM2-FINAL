@@ -24,7 +24,7 @@
                       <br> Community Park
           </h1>
           <p class="intro-subtitle intro-price">
-              <a href="/test"><span class="price-a">Enroll Now!</span></a>
+              <a href="/enroll"><span class="price-a">Enroll Now!</span></a>
           </p>
       </div>
     </div>
@@ -40,7 +40,7 @@
                       <br> Covered Court
           </h1>
           <p class="intro-subtitle intro-price">
-              <a href="/test"><span class="price-a">Enroll Now!</span></a>
+              <a href="/enroll"><span class="price-a">Enroll Now!</span></a>
           </p>
       </div>
     </div>
@@ -56,7 +56,7 @@
                       <br> Community Gym
           </h1>
           <p class="intro-subtitle intro-price">
-              <a href="/test"><span class="price-a">Enroll Now!</span></a>
+              <a href="/enroll"><span class="price-a">Enroll Now!</span></a>
           </p>
       </div>
     </div>
@@ -72,7 +72,7 @@
                       <br> Subdivision Grounds | 5k Run
           </h1>
           <p class="intro-subtitle intro-price">
-              <a href="/test"><span class="price-a">Enroll Now!</span></a>
+              <a href="/enroll"><span class="price-a">Enroll Now!</span></a>
           </p>
       </div>
     </div>
