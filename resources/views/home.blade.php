@@ -100,7 +100,7 @@
                         </div>
                     @endif
                     <div>
-                        <a href="{{ route('student.index') }}">View Students</a>
+                        <a href="{{ route('student.index') }}">View Home Owners</a>
                     </div>
                     <div>
                         <a href="{{ route('subject.index') }}">View Recreational Courses</a>
