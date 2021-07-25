@@ -7,7 +7,7 @@
 <div class="container">
     <div class="d-flex align-items-center justify-content-between">
         <h1>Offered Recreational Courses</h1>
-        <a class="btn btn-success" style="margin-left: 350px;" href="/enroll">
+        <a class="btn btn-success" style="margin-left: 350px;" href="/test">
           Enroll student
         </a>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addSubjectModal">
@@ -17,14 +17,11 @@
     </div>
     <table class="table table-light">
     <thead class="thead-dark">
-      <tr>
-        <th scope="col" class="text-center">Recreational Courses</th>
+        <tr>
+        <th scope="col" class="text-center">Recreational Course</th>
         <th scope="col" class="text-center">Enrollees</th>
-        <th scope="col" class="text-center">Venue</th>
-        <th scope="col" class="text-center">Schedule</th>
-        <th scope="col" class="text-center">Instructor</th>
         <th scope="col" class="text-center">Options</th>
-      </tr>
+        </tr>
     </thead>
     <tbody>
       @foreach($subjects as $subject)
@@ -32,9 +29,8 @@
         <td>{{ $subject->name }}</td>
         <td>{{ $subject->enrollees }}</td>
         <td style="display:none;">{{ $subject->capacity }}</td>
-        <td>{{ $subject->room }}</td>
-        <td>{{ $subject->schedule }}</td>
-        <td>{{ $subject->instructor }}</td>
+        <td style="display:none;">{{ $subject->room }}</td>
+        <td style="display:none;">{{ $subject->schedule }}</td>
         <td style="display:none;" class="subId">{{ $subject->id }}</td>
         <td>
           <a href="#" class="btn btn-outline-primary view_btn">View</a>

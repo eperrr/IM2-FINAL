@@ -19,7 +19,6 @@
         <th scope="col" class="text-center">Capacity</th>
         <th scope="col" class="text-center">Venue</th>
         <th scope="col" class="text-center">Schedule</th>
-        <th scope="col" class="text-center">Instructor</th>
         <th scope="col" class="text-center">Options</th>
         </tr>
     </thead>
@@ -31,7 +30,6 @@
         <td>{{ $subject->capacity }}</td>
         <td>{{ $subject->room }}</td>
         <td>{{ $subject->schedule }}</td>
-        <td>{{ $subject->instructor }}</td>
         <td style="display:none;" class="subId">{{ $subject->id }}</td>
         <td>
         <a href="#" class="enroll_btn btn btn-outline-success">Enroll</a>

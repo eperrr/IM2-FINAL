@@ -39,7 +39,7 @@ class CreateStudentsTable extends Migration
             'last_name' => 'Im',
             'house_code' => 'BLK6L37',
             'contact_number' => '09565920987',
-            'status' => 'Unenrolled',
+            'status' => 'Enrolled',
         ]);
         DB::table('students')->insert([
             'id' => 21100103,
@@ -55,7 +55,7 @@ class CreateStudentsTable extends Migration
             'last_name' => 'Sheilds',
             'house_code' => 'BLK1L33',
             'contact_number' => '09217560922',
-            'status' => 'Unenrolled',
+            'status' => 'Deleted',
         ]);
         DB::table('students')->insert([
             'id' => 21100419,

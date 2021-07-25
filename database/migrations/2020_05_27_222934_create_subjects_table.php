@@ -23,7 +23,6 @@ class CreateSubjectsTable extends Migration
             $table->string('schedule');
             $table->integer('capacity');
             $table->integer('enrollees');
-            $table->string('instructor');
         });
         DB::table('subjects')->insert([
             'name' => 'Zumba for Mommies',
@@ -31,7 +30,6 @@ class CreateSubjectsTable extends Migration
             'schedule' => 'MWF (4:00-5:30 PM)',
             'capacity' => 15,
             'enrollees' => 0,
-            'instructor' => 'Jenifer Espina',
         ]);
         DB::table('subjects')->insert([
             'name' => 'Yoga with Sensei Deca',
@@ -39,7 +37,6 @@ class CreateSubjectsTable extends Migration
             'schedule' => 'TTH (9:00-10:30 AM)',
             'capacity' => 10,
             'enrollees' => 0,
-            'instructor' => 'Jenifer Espina',
         ]);
         DB::table('subjects')->insert([
             'name' => 'KPOP Cardio Workout',
@@ -47,7 +44,6 @@ class CreateSubjectsTable extends Migration
             'schedule' => 'TTH (1:00-2:30 PM)',
             'capacity' => 10,
             'enrollees' => 0,
-            'instructor' => 'Joan Nacario',
         ]);
         DB::table('subjects')->insert([
             'name' => '5 km run',
@@ -55,7 +51,6 @@ class CreateSubjectsTable extends Migration
             'schedule' => 'SS (5:00-6:30 AM)',
             'capacity' => 10,
             'enrollees' => 0,
-            'instructor' => 'Joan Nacario',
         ]);
     }
 
