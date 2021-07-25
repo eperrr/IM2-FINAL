@@ -39,6 +39,10 @@ $('#studentInfoForm').on('submit', function(e){
 
                 case 3:
                     msg = 'You are already enrolled in this subject.'
+                    break;
+
+                case 4:
+                    msg = 'Sorry, this subject is full'
             }alert(msg)
             location.reload();
         },

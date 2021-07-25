@@ -109,7 +109,7 @@ $(document).ready(function () {
                 var subjects = '';
 
                 for(var i = 0; i < response.length; i++){
-                    subjects += '<tr> <td class="studentId">'+ response[i]['id'] + '</td> <td>'+ response[i]['first_name'] + '</td> <td>'+ response[i]['last_name']  + '</td> <td> ' + response[i]['status'] + ' </td> <td> <a href="#" operation="delete" class="action_btn btn btn-outline-danger mr-2">Delete</a>' + ((response[i]['status'] !== 'approved') ? '<a href="#" operation="approve" class="action_btn btn btn-outline-success mr-2">Approve</a>' : '') + '<a href="#" operation="cancel" class="action_btn btn btn-outline-warning">Cancel</a></td></tr>'
+                    subjects += '<tr> <td class="enrollmentId d-none">'+response[i]['enroll_id'] +'</td><td class="studentId">'+ response[i]['id'] + '</td> <td>'+ response[i]['first_name'] + '</td> <td>'+ response[i]['last_name']  + '</td> <td> ' + response[i]['status'] + ' </td> <td> <a href="#" operation="delete" class="action_btn btn btn-outline-danger mr-2">Delete</a>' + ((response[i]['status'] !== 'approved') ? '<a href="#" operation="approve" class="action_btn btn btn-outline-success mr-2">Approve</a>' : '') + '<a href="#" operation="cancel" class="action_btn btn btn-outline-warning">Cancel</a></td></tr>'
                 }
 
                 table.innerHTML = subjects;
@@ -118,10 +118,12 @@ $(document).ready(function () {
                 $('.action_btn').on('click', {subId : subjectId}, function(e) {
                     $('#viewEnrollesModal').modal('hide')
                     $tr = $(this).closest('tr')
-                    var studentId = $tr.children('.studentId').text();
+                    var studentId = $tr.children('.studentId').text()
+                    var id = $tr.children('.enrollmentId').text()
                     var operation = $(this).attr('operation')
                     $(`#${operation}StudentForm input[name=subId]`).val(e.data.subId);
                     $(`#${operation}StudentForm input[name=studentId]`).val(studentId);
+                    $(`#${operation}StudentForm input[name=id]`).val(id)
                     $(`#${operation}StudentModal`).modal('show')
                     
                 });

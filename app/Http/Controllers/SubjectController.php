@@ -68,7 +68,7 @@ class SubjectController extends Controller
         $enrolled = DB::table('students')
             ->join('enrolled_subjects', 'students.id', '=', 'enrolled_subjects.student_id')
             ->join('subjects', 'subjects.id', '=', 'enrolled_subjects.subject_id')
-            ->select('students.id', 'students.first_name', 'students.last_name', 'students.contact_number', 'enrolled_subjects.status')
+            ->select('students.id', 'students.first_name', 'students.last_name', 'students.contact_number', 'enrolled_subjects.status', 'enrolled_subjects.id as enroll_id')
             ->where('subjects.id', '=', $id)
             ->get();
 

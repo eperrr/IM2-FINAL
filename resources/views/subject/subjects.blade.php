@@ -7,7 +7,7 @@
 <div class="container">
     <div class="d-flex align-items-center justify-content-between">
         <h1>Offered Recreational Courses</h1>
-        <a class="btn btn-success" style="margin-left: 350px;" href="/enroll">
+        <a class="btn btn-success" style="margin-left: 350px;" href="/test">
           Enroll student
         </a>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addSubjectModal">
@@ -179,6 +179,7 @@
             <input type="hidden" id="subId" name="subId">
             <input type="hidden" id="studentId" name="studentId">
             <input type="hidden" value="deleted" name="status">
+            <input type="hidden" name="id">
             <button type="submit" class="btn btn-outline-success" style="width:40%;">Yes</button>
             <button type="button" class="btn btn-outline-danger" data-dismiss="modal" style="width:40%;">No</button>
           </form>
@@ -203,6 +204,7 @@
             <input type="hidden" id="subId" name="subId">
             <input type="hidden" id="studentId" name="studentId">
             <input type="hidden" id="cancel" value="cancelled" name="status">
+            <input type="hidden" name="id">
             <button type="submit" class="btn btn-outline-success" style="width:40%;">Yes</button>
             <button type="button" class="btn btn-outline-danger" data-dismiss="modal" style="width:40%;">No</button>
       </form>
@@ -226,6 +228,7 @@
             <input type="hidden" id="subId" name="subId">
             <input type="hidden" id="studentId" name="studentId">
             <input type="hidden" value="approved" name="status">
+            <input type="hidden" name="id">
             <button type="submit" class="btn btn-outline-success" style="width:40%;">Yes</button>
             <button type="button" class="btn btn-outline-danger" data-dismiss="modal" style="width:40%;">No</button>
       </form>
