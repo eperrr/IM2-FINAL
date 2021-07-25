@@ -44,26 +44,26 @@ class SubjectController extends Controller
 
     public function delete($id) {
         // find record of all enrollments to that subject
-        $record = Enrolled_subject::where('subject_id', $id);
+        $record = Enrolled_subject::where('subject_id', $id)->get();
 
         // loop through all enrollments
-        foreach($record as $enrollment) {
+        foreach ($record as $enrollment) {
 
           // check to see the student in that enrollment record is enrolled in any other subject
           // if they are not, set their status to unenrolled
           $isEnrolled = Enrolled_subject::where('student_id', $enrollment->student_id)->count();
-          if($isEnrolled == 0) {
+          if($isEnrolled == 1) {
+            // $student = Student::where('id', $enrollment->student_id)->first();
             $student = Student::find($enrollment->student_id);
             $student->status = 'Unenrolled';
-            $student-save();
+            $student->save();
           }
+
+          $enrollment->delete();
         }
 
-        // delete all enrollment records for that subject and finally delete the subject
-        $record->delete();
         Subject::destroy($id);
     }
-
     public function show($id) {
         $enrolled = DB::table('students')
             ->join('enrolled_subjects', 'students.id', '=', 'enrolled_subjects.student_id')

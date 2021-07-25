@@ -7,7 +7,7 @@
 <div class="container">
     <div class="d-flex align-items-center justify-content-between">
         <h1>Offered Recreational Courses</h1>
-        <a class="btn btn-success" style="margin-left: 350px;" href="/test">
+        <a class="btn btn-success" style="margin-left: 350px;" href="/enroll">
           Enroll student
         </a>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addSubjectModal">

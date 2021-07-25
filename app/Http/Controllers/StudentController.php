@@ -34,10 +34,12 @@ class StudentController extends Controller
 
     public function delete($id) {
         $student = Enrolled_subject::where('student_id', $id)->get();
-        for ($i=0; $i < count($student); $i++) { 
-            $subject = Subject::find($student[$i]['subject_id']);
-            $subject->enrollees -= 1;
-            $subject->save();
+        foreach($student as $stud){
+            $subject = Subject::find($stud->subject_id);
+            if($stud->status=='approved'){
+                $subject->decrement('enrollees');
+                $subject->save();
+            }
         }
         Enrolled_subject::where('student_id', $id)->delete();
         Student::destroy($id);
@@ -52,17 +54,19 @@ class StudentController extends Controller
         $student->house_code = request('house_code');
         $student->contact_number = request('contact_number');
         $student->status = request('status');
-
-        if(request('status') == 'Deleted'){
+        $student->save();
+        if(request('status') == 'Deleted' || request('status') == 'Unenrolled'){
             $student = Enrolled_subject::where('student_id', $id)->get();
-            for ($i=0; $i < count($student); $i++) { 
-                $subject = Subject::find($student[$i]['subject_id']);
-                $subject->enrollees -= 1;
-                $subject->save();
+            foreach($student as $stud){
+                $subject = Subject::find($stud->subject_id);
+                if($stud->status=='approved'){
+                    $subject->decrement('enrollees');
+                    $subject->save();
+                }
             }
             Enrolled_subject::where('student_id', $id)->delete();
         }
 
-        $student->save();
+        
     }
 }
