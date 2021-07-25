@@ -182,7 +182,7 @@
                                     <li><a class="dropdown-item" href="#">Unenrolled</a><li>
                                     <li><a class="dropdown-item" href="#">Deleted</a><li>
                                 </ul> -->
-                                <select class="form-select" name="status" aria-label="Select the student's status">
+                                <select class="form-select" name="status" aria-label="Select the student's status" style="width:100%; height:35px;">
                                     <option>Enrolled</option>
                                     <option>Unenrolled</option>
                                     <option>Deleted</option>
