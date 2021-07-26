@@ -66,16 +66,19 @@ class EnrolledSubjectController extends Controller
             $student_status = Student::find(request('studentId'));
             $student_status->status = 'enrolled';
             $student_status->save();
-        }else if(request('status')=='deleted'){
+        }else if(request('status')=='unenrolled'){
             $subject = Subject::find($subjectId);
             if($isEnrolled->status == 'approved'){
                 $subject->decrement('enrollees');
+                $student_status = Student::find(request('studentId'));
+                $student_status->status = 'Unenrolled';
+                $student_status->save();
                 $subject->save();
             }
             $isEnrolledCount = Enrolled_subject::where(['student_id' => request('studentId'), ['status','!=','deleted']])->count();
             if($isEnrolledCount==0){
                 $student_status = Student::find(request('studentId'));
-                $student_status->status = 'unenrolled';
+                $student_status->status = 'Unenrolled';
                 $student_status->save();
             }
         }
