@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Student;
+use App\Enrolled_subject;
 use DB;
 
 class HomeController extends Controller
@@ -29,7 +30,7 @@ class HomeController extends Controller
     {
         $students =  DB::table('students')->where('status','!=','deleted')->count(); 
         $enrolled = Student::where('status','=','enrolled')->count();
-        $pending = Student::where('status','=','pending')->count();
+        $pending = Enrolled_subject::where('status', 'pending')->count();
         $unenrolled = Student::where('status','=','unenrolled')->count();
         return view('home',compact('students', 'enrolled', 'pending', 'unenrolled'));
         
