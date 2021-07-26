@@ -31,10 +31,13 @@ $(document).ready(function () {
         }).get();
 
         $('#subjectName').val(data[0]);
+        $('#subjectId').val(data[6]);
         $('#capacity').val(data[2]);
         $('#room').val(data[3]);
         $('#schedule').val(data[4]);
-        $('#subjectId').val(data[5]);
+        $('#instructor').val(data[5]);
+        
+        
   });
 
     $('#editSubjectForm').on('submit', function(e){
@@ -68,7 +71,7 @@ $(document).ready(function () {
                 return $(this).text();
             }).get();
 
-            $('#subjectDeleteId').val(data[5]);
+            $('#subjectDeleteId').val(data[6]);
       });
 
       

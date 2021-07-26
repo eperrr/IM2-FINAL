@@ -7,7 +7,7 @@
 <div class="container">
     <div class="d-flex align-items-center justify-content-between">
         <h1>Offered Recreational Courses</h1>
-        <a class="btn btn-success" style="margin-left: 350px;" href="/test">
+        <a class="btn btn-success" style="margin-left: 350px;" href="/enroll">
           Enroll student
         </a>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addSubjectModal">
@@ -20,6 +20,10 @@
         <tr>
         <th scope="col" class="text-center">Recreational Course</th>
         <th scope="col" class="text-center">Enrollees</th>
+        <th scope="col" class="text-center" style="display:none;">Capacity</th>
+        <th scope="col" class="text-center" style="display:none;">Room</th>
+        <th scope="col" class="text-center" style="display:none;">Schedule</th>
+        <th scope="col" class="text-center">Instructor</th>
         <th scope="col" class="text-center">Options</th>
         </tr>
     </thead>
@@ -31,6 +35,7 @@
         <td style="display:none;">{{ $subject->capacity }}</td>
         <td style="display:none;">{{ $subject->room }}</td>
         <td style="display:none;">{{ $subject->schedule }}</td>
+        <td>{{ $subject->instructor }}</td>
         <td style="display:none;" class="subId">{{ $subject->id }}</td>
         <td>
           <a href="#" class="btn btn-outline-primary view_btn">View</a>
@@ -71,6 +76,10 @@
             <label for="exampleInputPassword1">Schedule:</label>
             <input type="text" class="form-control" name="schedule" placeholder="Ex: MWF (4:00-5:00 PM)">
           </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Instructor:</label>
+            <input type="text" class="form-control" name="instructor" placeholder="Juan Dela Cruz">
+          </div>
           <input type="submit" class="btn btn-outline-secondary" style="width:100%;" value="Add">
         </form>
         </div>
@@ -106,6 +115,10 @@
             <div class="form-group">
               <label for="exampleInputPassword1">Schedule:</label>
               <input type="text" class="form-control" id="schedule" name="schedule" placeholder="Enter schedule">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Instructor:</label>
+              <input type="text" class="form-control" id="instructor" name="instructor" placeholder="Enter name">
             </div>
             <input type="submit" class="btn btn-outline-secondary" style="width:100%;" value="Save">
           </form>

@@ -26,6 +26,7 @@ class SubjectController extends Controller
         $subject->capacity = request('capacity');
         $subject->room = request('room');
         $subject->schedule = request('schedule');
+        $subject->instructor = request('instructor');
         $subject->enrollees = 0;
 
         $subject->save();
@@ -38,6 +39,7 @@ class SubjectController extends Controller
         $subject->capacity = request('capacity');
         $subject->room = request('room');
         $subject->schedule = request('schedule');
+        $subject->instructor = request('instructor');
 
         $subject->save();
     }
