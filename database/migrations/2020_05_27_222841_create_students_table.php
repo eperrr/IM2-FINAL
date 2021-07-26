@@ -145,6 +145,126 @@ class CreateStudentsTable extends Migration
                     'contact_number' => '09128761099',
                     'status' => 'Unenrolled',
                 ]);
+                DB::table('students')->insert([
+                    'id' => 21111801,
+                    'first_name' => 'Kristine',
+                    'last_name' => 'Hermosa',
+                    'house_code' => 'BLK18L1',
+                    'contact_number' => '09274310986',
+                    'status' => 'Unenrolled',
+                ]);
+                DB::table('students')->insert([
+                    'id' => 21100638,
+                    'first_name' => 'Joe',
+                    'last_name' => 'Jonas',
+                    'house_code' => 'BLK6L38',
+                    'contact_number' => '09751230966',
+                    'status' => 'Unenrolled',
+                ]);
+                DB::table('students')->insert([
+                    'id' => 21110103,
+                    'first_name' => 'Nick',
+                    'last_name' => 'Jonas',
+                    'house_code' => 'BLK1L03',
+                    'contact_number' => '09093484210',
+                    'status' => 'Unenrolled',
+                ]);
+                DB::table('students')->insert([
+                    'id' => 21100130,
+                    'first_name' => 'Margaret',
+                    'last_name' => 'Mondragon',
+                    'house_code' => 'BLK1L30',
+                    'contact_number' => '09271560922',
+                    'status' => 'Unenrolled',
+                ]);
+                DB::table('students')->insert([
+                    'id' => 21100519,
+                    'first_name' => 'James',
+                    'last_name' => 'Bond',
+                    'house_code' => 'BLK5L19',
+                    'contact_number' => '09788967200',
+                    'status' => 'Unenrolled',
+                    ]);
+                DB::table('students')->insert([
+                            'id' => 21100531,
+                            'first_name' => 'Krystal',
+                            'last_name' => 'Jung',
+                            'house_code' => 'BLK5L31',
+                            'contact_number' => '09278890230',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21100136,
+                            'first_name' => 'Jennifer',
+                            'last_name' => 'Lawrence',
+                            'house_code' => 'BLK1L36',
+                            'contact_number' => '09670985622',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21100712,
+                            'first_name' => 'Olivia',
+                            'last_name' => 'Rodrigo',
+                            'house_code' => 'BLK7L12',
+                            'contact_number' => '09652071240',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21110309,
+                            'first_name' => 'Harry',
+                            'last_name' => 'Potter',
+                            'house_code' => 'BLK3L09',
+                            'contact_number' => '09456795230',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21101209,
+                            'first_name' => 'Conan',
+                            'last_name' => 'Black',
+                            'house_code' => 'BLK12L9',
+                            'contact_number' => '09650981500',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21121207,
+                            'first_name' => 'Baks',
+                            'last_name' => 'Keith',
+                            'house_code' => 'BLK12L7',
+                            'contact_number' => '09458456710',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21110809,
+                            'first_name' => 'Keisuke',
+                            'last_name' => 'Takemichy',
+                            'house_code' => 'BLK8L09',
+                            'contact_number' => '09156805673',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21101311,
+                            'first_name' => 'Julia',
+                            'last_name' => 'Barreto',
+                            'house_code' => 'BLK13L11',
+                            'contact_number' => '09567981216',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21101602,
+                            'first_name' => 'Veronica',
+                            'last_name' => 'Antonette',
+                            'house_code' => 'BLK16L2',
+                            'contact_number' => '09356701288',
+                            'status' => 'Unenrolled',
+                        ]);
+                DB::table('students')->insert([
+                            'id' => 21102101,
+                            'first_name' => 'Teodore',
+                            'last_name' => 'Chip',
+                            'house_code' => 'BLK21L1',
+                            'contact_number' => '09125679099',
+                            'status' => 'Unenrolled',
+                        ]);
     }
 
     /**
