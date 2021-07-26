@@ -43,6 +43,16 @@ class SubjectController extends Controller
 
         $subject->save();
     }
+    public function deleteEnrollment($id) {
+        $record = Enrolled_subject::find(request('id'));
+        $isEnrolled = $record->status == 'approved';
+        $subject = Subject::find(request('subId'));
+        if($isEnrolled) {
+          $subject->decrement('enrollees');
+          $subject->save();
+        }
+        $record->delete();
+      }
 
     public function delete($id) {
         // find record of all enrollments to that subject

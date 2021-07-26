@@ -36,13 +36,11 @@ class EnrolledSubjectController extends Controller
         if(Subject::find($subjectId)){
             $house_code = Student::select('house_code')->where('id', request('id'))->get();
             //looking for value not submitted in POST, changed to house_code
-            $isEnrolled = Enrolled_subject::where(['subject_id' => $subjectId, 'student_id' => request('id'), ['status','!=','deleted']])->get();
+            $isEnrolled = Enrolled_subject::where(['subject_id' => $subjectId, 'student_id' => request('id'), ['status','!=','unenrolled']])->get();
             // $isFull = Subject::where([['capacity','=','enrollees'], 'id' => $subjectId])->count();
             $isFull = Subject::find($subjectId);
             if(!Student::find(request('id'))&& (count($house_code) == 0 || $house_code[0]['house_code'] !== request('house_code'))){$msg = 2;}
             else if(Student::find(request('id'))->status=='Deleted'){ $msg = 2;}
-            else if(Student::find(request('id'))->id =='21100636'){ $msg = 2;}
-            else if(Student::find(request('id'))->id =='21111207'){ $msg = 2;}
             else if(count($isEnrolled) > 0){ $msg = 3; }
             else if($isFull->enrollees == $isFull->capacity){ $msg = 4; }
             else{

@@ -112,7 +112,7 @@ $(document).ready(function () {
                 var subjects = '';
 
                 for(var i = 0; i < response.length; i++){
-                    subjects += '<tr> <td class="enrollmentId d-none">'+response[i]['enroll_id'] +'</td><td class="studentId">'+ response[i]['id'] + '</td> <td>'+ response[i]['first_name'] + '</td> <td>'+ response[i]['last_name']  + '</td> <td> ' + response[i]['status'] + ' </td> <td> <a href="#" operation="delete" class="action_btn btn btn-outline-danger mr-2">Delete</a>' + ((response[i]['status'] !== 'approved') ? '<a href="#" operation="approve" class="action_btn btn btn-outline-success mr-2">Approve</a>' : '') + '<a href="#" operation="cancel" class="action_btn btn btn-outline-warning">Cancel</a></td></tr>'
+                    subjects += '<tr> <td class="enrollmentId d-none">'+ response[i]['enroll_id'] +'</td><td class="studentId">'+ response[i]['id'] + '</td> <td>'+ response[i]['first_name'] + '</td> <td>'+ response[i]['last_name']  + '</td> <td> ' + response[i]['status'] + ' </td> <td> <a href="#" operation="delete" class="action_btn btn btn-outline-danger mr-2">Delete</a>' + ((response[i]['status'] !== 'approved') ? '<a href="#" operation="approve" class="action_btn btn btn-outline-success mr-2">Approve</a> ' : '<a href="#" operation="unenroll" class="action_btn btn btn-outline-warning">Unenroll</a></td>') + '</tr>';
                 }
 
                 table.innerHTML = subjects;
@@ -131,24 +131,44 @@ $(document).ready(function () {
                     
                 });
 
-              $('.updateRecordForm').on('submit', function(e){
-                e.preventDefault();
-                var operation = $(this).attr('operation')
-                var subId = $(`#${operation}StudentForm input[name=subId]`).val();
-                console.log($(this).serialize())
-                $.ajax({
-                    type: "POST",
-                    url: "/enroll/cancel/"+subId,
-                    data: $(this).serialize(),
-                    success: function (response) {
-                        $(`#${operation}StudentModal`).modal('hide');
-                        location.reload()
-                        },
-                        error: function(error) {
-                            console.log(error);
-                        }
+                $('.updateRecordForm').on('submit', function(e){
+                    e.preventDefault();
+                    var operation = $(this).attr('operation')
+                    var subId = $(`#${operation}StudentForm input[name=subId]`).val();
+                    console.log($(this).serialize())
+                    if(operation != 'delete'){
+                    $.ajax({
+                        type: "POST",
+                        url: "/enroll/cancel/"+subId,
+                        data: $(this).serialize(),
+                        success: function (response) {
+                            $(`#${operation}StudentModal`).modal('hide');
+                            location.reload()
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                
+                    });
+                }else if(operation == 'delete'){
+                        e.preventDefault();
+                        var operation = $(this).attr('operation')
+                        var subId = $(`#${operation}StudentForm input[name=subId]`).val();
+                        $.ajax({
+                            type: "DELETE",
+                            url: "/subjects/deleteEnrollment/"+subId,
+                            data: $(this).serialize(),
+                            success: function (response) {
+                                $(`#${operation}StudentModal`).modal('hide');
+                                alert(response)
+                                location.reload()
+                                },
+                                error: function(error) {
+                                    console.log(error);
+                                }
+                        });
+                    }
                 });
-          });
             },
             error: function (error) {
                 console.log(error);
@@ -156,3 +176,8 @@ $(document).ready(function () {
         });
   });
 });
+
+
+
+
+

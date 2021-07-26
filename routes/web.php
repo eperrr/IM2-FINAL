@@ -38,7 +38,7 @@ Route::post('/subjects', 'SubjectController@store')->name('subject.store');
 Route::put('/subjects/edit/{id}', 'SubjectController@update');
 Route::delete('/subjects/delete/{id}', 'SubjectController@delete');
 Route::delete('/subjects/unenroll/{Id}', 'SubjectController@unenroll');
-
+Route::delete('/subjects/deleteEnrollment/{Id}', 'SubjectController@deleteEnrollment');
 //Authentication Routes(Generated)
 Auth::routes();
 // Auth::routes(['register' => false]); //disable registration

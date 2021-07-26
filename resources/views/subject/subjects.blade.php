@@ -203,20 +203,20 @@
 <!----------------------------------------------- DELETE STUDENT ENROLLMENT MODAL END ----------------------------------------------->
 </div>
 
-<!----------------------------------------------- CANCEL ENROLLMENT MODAL START ----------------------------------------------->
-<div class="modal fade" id="cancelStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!----------------------------------------------- UNENROLL MODAL START ----------------------------------------------->
+<div class="modal fade" id="unenrollStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <h5 class="modal-title text-center" style="width:100%">Are you sure you want to cancel this enrollment request?</h5>
+      <h5 class="modal-title text-center" style="width:100%">Are you sure you want to unenroll this student?</h5>
       </div>
       <div class="modal-body">
-      <form operation="cancel" class="updateRecordForm text-center" id="cancelStudentForm">
+      <form operation="unenroll" class="updateRecordForm text-center" id="unenrollStudentForm">
           {{ csrf_field() }}
           {{ method_field('post') }}
             <input type="hidden" id="subId" name="subId">
             <input type="hidden" id="studentId" name="studentId">
-            <input type="hidden" id="cancel" value="cancelled" name="status">
+            <input type="hidden" id="cancel" value="unenrolled" name="status">
             <input type="hidden" name="id">
             <button type="submit" class="btn btn-outline-success" style="width:40%;">Yes</button>
             <button type="button" class="btn btn-outline-danger" data-dismiss="modal" style="width:40%;">No</button>
@@ -225,7 +225,7 @@
     </div>
   </div>
 </div>
-<!----------------------------------------------- CANCEL ENROLLMENT MODAL END ----------------------------------------------->
+<!----------------------------------------------- UNENROLL MODAL END ----------------------------------------------->
 
 <!----------------------------------------------- APPROVE ENROLLMENT MODAL START ----------------------------------------------->
 <div class="modal fade" id="approveStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

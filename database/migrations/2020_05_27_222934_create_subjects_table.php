@@ -29,7 +29,7 @@ class CreateSubjectsTable extends Migration
             'name' => 'Zumba for Mommies',
             'room' => 'Club House',
             'schedule' => 'MWF (4:00-5:30 PM)',
-            'capacity' => 15,
+            'capacity' => 3,
             'enrollees' => 0,
             'instructor' => 'Jenifer Espina',
             
@@ -38,7 +38,7 @@ class CreateSubjectsTable extends Migration
             'name' => 'Yoga with Sensei Deca',
             'room' => 'Blk 8 Lot 33',
             'schedule' => 'TTH (9:00-10:30 AM)',
-            'capacity' => 10,
+            'capacity' => 5,
             'enrollees' => 0,
             'instructor' => 'Jenifer Espina',
         ]);
@@ -46,7 +46,7 @@ class CreateSubjectsTable extends Migration
             'name' => 'KPOP Cardio Workout',
             'room' => 'Club House',
             'schedule' => 'TTH (1:00-2:30 PM)',
-            'capacity' => 10,
+            'capacity' => 7,
             'enrollees' => 0,
             'instructor' => 'Joan Nacario',
         ]);
