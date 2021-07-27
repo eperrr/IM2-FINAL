@@ -20,7 +20,7 @@
         <tr>
         <th scope="col" class="text-center">Recreational Course</th>
         <th scope="col" class="text-center">Enrollees</th>
-        <th scope="col" class="text-center" style="display:none;">Capacity</th>
+        <th scope="col" class="text-center">Capacity</th>
         <th scope="col" class="text-center" style="display:none;">Room</th>
         <th scope="col" class="text-center" style="display:none;">Schedule</th>
         <th scope="col" class="text-center">Instructor</th>
@@ -32,7 +32,7 @@
         <tr style="text-align: center; vertical-align: middle" >
         <td>{{ $subject->name }}</td>
         <td>{{ $subject->enrollees }}</td>
-        <td style="display:none;">{{ $subject->capacity }}</td>
+        <td>{{ $subject->capacity }}</td>
         <td style="display:none;">{{ $subject->room }}</td>
         <td style="display:none;">{{ $subject->schedule }}</td>
         <td>{{ $subject->instructor }}</td>
